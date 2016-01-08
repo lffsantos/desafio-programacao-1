@@ -7,6 +7,12 @@
 
 
 {% block content %}
+    <div class="col-sm-12">
+        Upload de arquivos separados por TAB com as seguintes colunas: <i>'purchaser name', 'item description', 'item price', 'purchase count', 'merchant address', 'merchant name'</i>.
+        Você pode assumir que as colunas estarão sempre nesta ordem,
+        que sempre haverá dados em cada coluna, e que sempre haverá uma linha de cabeçalho.
+        <br><br>
+    </div>
 
     <div class="col-sm-7">
             <form action="{% url 'upload' %}" method="post" enctype="multipart/form-data">

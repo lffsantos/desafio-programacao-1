@@ -56,5 +56,4 @@ def upload(request):
     form = UploadForm()
     if request.method == 'POST':
         return save_file(request)
-
     return render(request, 'upload.html', {'form': form})
