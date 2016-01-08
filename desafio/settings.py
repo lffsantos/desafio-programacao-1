@@ -29,6 +29,7 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', default=[], cast=Csv())
 
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -141,10 +142,8 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
 )
 
-SOCIAL_AUTH_FACEBOOK_KEY = '217935458548497'
+SOCIAL_AUTH_FACEBOOK_KEY = config('SOCIAL_AUTH_FACEBOOK_KEY')
 
-SOCIAL_AUTH_FACEBOOK_SECRET = 'e47a6745ea9ee0fcaafd72813078a63d'
+SOCIAL_AUTH_FACEBOOK_SECRET = config('SOCIAL_AUTH_FACEBOOK_SECRET')
 
-SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
-
-LOGIN_REDIRECT_URL = '/upload/'
+SOCIAL_AUTH_FACEBOOK_SCOPE = config('SOCIAL_AUTH_FACEBOOK_SCOPE', default=[], cast=Csv())

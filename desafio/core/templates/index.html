@@ -1,5 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
 
-<h1>Bem vindo, <span id="username">{{ user }}!</span></h1>
+{% block assets %}
+    <link href="{% static 'css/bootstrap-social.css' %}" rel="stylesheet">
+{% endblock %}
+{% block content %}
 
-<a href="{% url 'auth:logout' %}?next={% url 'home' %}">Logout</a>
-<a href="{% url 'social:begin' 'facebook' %}?next={% url 'upload' %}">Login with Facebook</a>
+    <div class="col-sm-3">
+        <a href="{% url 'social:begin' 'facebook' %}?next={% url 'upload' %}" class="btn btn-block btn-social btn-facebook">
+            <span class="fa fa-facebook"></span> Entrar com o Facebook
+        </a>
+    </div>
+{% endblock %}

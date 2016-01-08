@@ -2,15 +2,19 @@ import csv
 import unicodedata
 from desafio.core.forms import UploadForm
 from desafio.core.models import UploadFile
+from django.contrib.auth.models import AnonymousUser
 from django.db.models import Sum, F
-from django.shortcuts import render
+from django.shortcuts import render, resolve_url as r
 from django.utils.timezone import now
+from django.http import HttpResponseRedirect
 from six import StringIO
 
 
 def home(request):
-    return render(request, 'index.html')
+    if isinstance(request.user, AnonymousUser):
+        return render(request, 'index.html')
 
+    return HttpResponseRedirect(r('upload'))
 
 def billing_file(import_name):
     files = UploadFile.objects.filter(import_name=import_name).aggregate(billing=Sum(F('item_price')*F('purchase_count')))
@@ -19,6 +23,7 @@ def billing_file(import_name):
 
 def save_file(request):
     form = UploadForm(request.POST, request.FILES)
+
     if not form.is_valid():
         return render(request, 'upload.html', {'form': UploadForm()})
 
@@ -42,7 +47,6 @@ def save_file(request):
     value_billing = billing_file(import_name)
 
     return render(request, 'upload.html', {'form': form, 'receita': value_billing, 'file_name': file_name})
-
 
 
 def upload(request):

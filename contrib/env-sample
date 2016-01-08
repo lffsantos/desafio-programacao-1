@@ -1,3 +1,7 @@
 SECRET_KEY=THIS_IS_NOT_A_GOOD_SECRET
 DEBUG=True
 ALLOWED_HOSTS=127.0.0.1, .localhost
+
+FACEBOOK_APP_ID=217936648548378                          # required
+FACEBOOK_APP_SECRET=d4df9bc292d3f8449767af3596ba6268     # required
+FACEBOOK_SCOPE=email                                     # (optional, defaults to "email")
