@@ -6,6 +6,8 @@
 {% endblock %}
 {% block content %}
 
+    <h3>Efetue o Login com o Facebook para realizar o upload do Arquivo!</h3>
+    <br>
     <div class="col-sm-3">
         <a href="{% url 'social:begin' 'facebook' %}?next={% url 'upload' %}" class="btn btn-block btn-social btn-facebook">
             <span class="fa fa-facebook"></span> Entrar com o Facebook
