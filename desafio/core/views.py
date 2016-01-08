@@ -24,7 +24,7 @@ def save_file(request):
         import_name = file_name + str(now())[:19]
         data = data.read().decode('utf-8').split('\n')
         list_content_file = []
-        for line in data[1:-1]:
+        for line in data[1:]:
             upload_file = UploadFile()
             # Normalize content line
             line = unicodedata.normalize('NFKD', line).encode('ASCII', 'ignore').decode('utf-8').lower().split('\t')

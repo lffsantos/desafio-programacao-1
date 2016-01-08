@@ -4,7 +4,9 @@
     <head>
         <meta charset="utf-8">
         <title>Upload de Arquivo</title>
+        <script src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
         <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/upload.js' %}"></script>
         <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     </head>
     <body>
@@ -24,7 +26,7 @@
                         </p>
                     </div>
 
-                <input type="submit" value="Upload" class="btn btn-primary"/>
+                <input type="submit" value="Upload" class="btn btn-primary" id="submit_upload"/>
                 </div>
           </div>
         </form>
