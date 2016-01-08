@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/lffsantos/desafio-programacao-1.svg?branch=master)](https://travis-ci.org/lffsantos/desafio-programacao-1)
+
 # Desafio de programação 1
 A idéia deste desafio é nos permitir avaliar melhor as habilidades de candidatos à vagas de programador, de vários níveis.
 
