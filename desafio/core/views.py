@@ -8,7 +8,7 @@ from django.utils.timezone import now
 
 
 def home(request):
-    return HttpResponseRedirect(r('upload'))
+    return render(request, 'index.html')
 
 
 def billing_file(import_name):

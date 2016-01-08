@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
 
-</body>
-</html>
+<h1>Bem vindo, <span id="username">{{ user }}!</span></h1>
+
+<a href="{% url 'auth:logout' %}?next={% url 'home' %}">Logout</a>
+<a href="{% url 'social:begin' 'facebook' %}?next={% url 'upload' %}">Login with Facebook</a>

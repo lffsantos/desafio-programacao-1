@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'test_without_migrations',
-    'desafio.core'
+    'desafio.core',
+    'social.apps.django_app.default',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -62,6 +63,8 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'social.apps.django_app.context_processors.backends',
+                'social.apps.django_app.context_processors.login_redirect',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -132,3 +135,16 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
+
+AUTHENTICATION_BACKENDS = (
+    'social.backends.facebook.FacebookOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+SOCIAL_AUTH_FACEBOOK_KEY = '217935458548497'
+
+SOCIAL_AUTH_FACEBOOK_SECRET = 'e47a6745ea9ee0fcaafd72813078a63d'
+
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+
+LOGIN_REDIRECT_URL = '/upload/'
