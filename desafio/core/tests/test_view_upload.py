@@ -49,5 +49,5 @@ class UploadTestPostInValid(TestCase):
         self.resp = self.client.post(r('upload'), {'file': {}})
 
     def test_post(self):
-        self.assertContains(self.resp, "lucas")
+        self.assertEqual(200, self.resp.status_code)
 
