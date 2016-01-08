@@ -1,5 +1,25 @@
 [![Build Status](https://travis-ci.org/lffsantos/desafio-programacao-1.svg?branch=master)](https://travis-ci.org/lffsantos/desafio-programacao-1)
 
+
+## Como desenvolver?
+
+1. clone o respositório.
+2. crie um virtualenvo com Python 3.5.
+3. Ative o virtualenv.
+4. Instale as dependências.
+5. Configure a instância .env
+6. Execute os testes.
+
+```console
+git clone git@github.com:lffsantos/desafio-programacao-1.git desafio_programacao
+cd desafio_programacao
+python -m desafio_programacao .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+cp contrib/env-sample .env
+python manage.py test
+```
+
 # Desafio de programação 1
 A idéia deste desafio é nos permitir avaliar melhor as habilidades de candidatos à vagas de programador, de vários níveis.
 
