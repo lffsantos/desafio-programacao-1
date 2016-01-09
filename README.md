@@ -17,6 +17,8 @@ python -m desafio_programacao .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 cp contrib/env-sample .env
+python manage.py makemigrations
+python manage.py migrate
 python manage.py test
 ```
 
